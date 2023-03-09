@@ -16,4 +16,10 @@ export class HeroService {
     this.messageService.pushMessage("Fetch heroes success");
     return heros;
   }
+
+  public fetchHeroFromDataSourceById = (id: number): Observable<Hero> => {
+    console.log("FetchHeroFromDataSource")
+    const hero = HEROES.find(h => h.id === id)!;
+    return of(hero);
+  }
 }

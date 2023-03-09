@@ -4,32 +4,34 @@ import { FormsModule } from '@angular/forms'; // <-- NgModel lives here
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeroComponent } from './hero/hero.component';
-import { RouterModule, Routes } from '@angular/router';
+import { RouterModule } from '@angular/router';
 import { HeroDetailComponent } from './hero-detail/hero-detail.component';
 import { MessageComponent } from './message/message.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { HeroService } from './hero/hero.service';
 
-const routes: Routes = [
-  { path: 'heroes', component: HeroComponent }
-];
 
 @NgModule({
-  declarations: [			
+  declarations: [
     AppComponent,
-      HeroComponent,
-      HeroDetailComponent,
-      MessageComponent
-   ],
+    HeroComponent,
+    HeroDetailComponent,
+    MessageComponent,
+    DashboardComponent
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    RouterModule.forRoot(routes),
   ],
 
   exports: [RouterModule],
   
-  providers: [],
+  providers: [
+    HeroService,
   
+  ],
+
   bootstrap: [AppComponent]
 })
 export class AppModule { }
