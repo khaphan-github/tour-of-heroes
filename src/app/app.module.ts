@@ -3,19 +3,21 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms'; // <-- NgModel lives here
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HeroComponent } from './heros/hero.component';
+import { HeroComponent } from './hero/hero.component';
 import { RouterModule, Routes } from '@angular/router';
 import { HeroDetailComponent } from './hero-detail/hero-detail.component';
+import { MessageComponent } from './message/message.component';
 
 const routes: Routes = [
   { path: 'heroes', component: HeroComponent }
 ];
 
 @NgModule({
-  declarations: [		
+  declarations: [			
     AppComponent,
       HeroComponent,
-      HeroDetailComponent
+      HeroDetailComponent,
+      MessageComponent
    ],
   imports: [
     BrowserModule,

@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Hero } from '../heros/hero';
+import { Hero } from '../hero/hero';
 
 @Component({
   selector: 'app-hero-detail',
