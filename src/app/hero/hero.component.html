@@ -1,9 +1,30 @@
 <h2>My Heroes</h2>
 <ul class="heroes">
-  <li *ngFor="let hero of heroes">
-    <a  routerLink="/heroes/{{hero.id}}">
-      <span class="badge">{{hero.id}}</span>
-      <span class="name">{{hero.name}}</span>
-    </a>
+  <div>
+    <h2>Thêm anh hùng</h2>
+    <label for="new-hero">Hero name: </label>
+    <input id="new-hero" #heroName />
+
+    <!-- (click) passes input value to add() and then clears the input -->
+    <button type="button" class="add-button" (click)="add(heroName.value); heroName.value=''">
+      Add hero
+    </button>
+  </div>
+
+  <h2>Tìm kiếm anh hùng: </h2>
+  <input />
+
+  <li class="list-content" *ngFor="let hero of heroes">
+    <div class="content">
+      <a routerLink="/heroes/{{hero.id}}">
+        <p class="badge">Mã anh hùng: <strong> {{hero.id}}</strong></p>
+        <p class="name">Tên anh hùng: <strong>{{hero.name}}</strong></p>
+      </a>
+    </div>
+
+    <div class="action">
+      <button>Chỉnh sửa</button>
+      <button type="button" (click)="delete(hero)">Xóa</button>
+    </div>
   </li>
 </ul>
